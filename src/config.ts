@@ -6,7 +6,7 @@ import path from "path";
 import { regexEscape, timeCalc } from "./utils";
 import { defaultConfig } from "./utils/data";
 
-const config = <ConfigType>{};
+const config = <ConfigType>jsYml.load(defaultConfig);
 const configFile = path.join(__dirname, "..", "config.yml");
 
 try {
@@ -14,7 +14,6 @@ try {
 } catch {
   fs.writeFileSync(configFile, defaultConfig, { encoding: "utf8" });
 }
-Object.assign(config, jsYml.load(defaultConfig));
 
 /**間隔獲取最新訊息 (ms) */
 export const interval = config.interval;

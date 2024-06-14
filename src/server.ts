@@ -117,7 +117,7 @@ server
       case "EACCES":
         console.error(`${bind} 需要更高權限`);
         process.exit(1);
-        break;
+      // eslint-disable-next-line no-fallthrough
       case "EADDRINUSE":
         console.error(`${bind} 已使用`);
         console.log("嘗試使用其他端口...");

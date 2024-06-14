@@ -22,7 +22,7 @@
     "googleapis": "^107.0.0",
     "js-yaml": "^4.1.0",
     "string-math": "^1.2.2",
-    "youtube-chat": "^2.1.1"
+    "youtube-chat": "^2.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

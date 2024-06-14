@@ -13,7 +13,12 @@ chat
   .on("chat", (data) => {
     console.log(
       `${data.author.name} > ${data.message
-        .map((_) => "text" in _ && _.text)
+        .map((s) => {
+          if ("emojiText" in s && s.emojiText) return s.emojiText;
+          if ("text" in s && s.text) return s.text;
+
+          return "";
+        })
         .join("")}`
     );
   })
