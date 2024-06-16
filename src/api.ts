@@ -8,7 +8,7 @@ import type {
 } from "youtube-chat/dist/types/yt-response";
 import type { ChatItem } from "youtube-chat/dist/types/data";
 
-import { AREA, MembershipLevelRegex } from "./config";
+import { AREA, MembershipLevelRegex, EXCHANGERATES_KEY } from "./config";
 import { AreaToCurrency } from "./utils/data";
 import { day } from "./utils";
 
@@ -45,7 +45,9 @@ export class LiveChat extends EventEmitter {
     const updateExchangeRates = async () => {
       const {
         data: { rates },
-      } = await axios.get(`https://api.exchangerate.host/latest?base=${AREA}`);
+      } = await axios.get(
+        `https://api.exchangerate.host/latest?base=${AREA}&access_key=${EXCHANGERATES_KEY}`
+      );
       this.exchange = <typeof this.exchange>rates;
     };
     setInterval(updateExchangeRates.bind(this), day);

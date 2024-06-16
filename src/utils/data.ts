@@ -255,6 +255,8 @@ IDUrl: https://www.youtube.com/channel/UC9YOQFPfEUXbulKDtxeqqBA
 
 # 地區(匯率換算使用) https://api.exchangerate.host/latest
 AREA: TWD
+# 匯率轉換 KEY 請在此申請(基本免費的就夠用了) https://exchangerate.host/
+EXCHANGERATES_KEY: ''
 
 # 超級留言每元添加加班時間比
 # ex: 1元 = 1分鐘, 2元 = 2分鐘

@@ -41,6 +41,8 @@ export const MembershipLevel: ConfigType["MembershipLevel"] = Object.assign(
   }))
 );
 
+export const EXCHANGERATES_KEY = config.EXCHANGERATES_KEY;
+
 export const MembershipLevelRegex = new RegExp(
   `.*(${regexEscape(...Object.keys(MembershipLevel)).join("|")}).*`
 );
@@ -54,6 +56,11 @@ export interface ConfigType {
 
   /**地區(匯率換算使用) https://api.exchangerate.host/latest */
   AREA: string;
+
+  /**匯率換算使用 KEY
+   * @see https://exchangerate.host/
+   */
+  EXCHANGERATES_KEY: string;
 
   /**超級留言每元添加加班時間比
    * ex: 1元 = 1分鐘, 2元 = 2分鐘
