@@ -161,10 +161,6 @@ export const parseChat = async (
       },
     },
   } = data;
-  const {
-    data: { rates },
-  } = await axios.get(`https://api.exchangerate.host/latest?base=${AREA}`);
-  exchange = <typeof exchange>rates;
 
   /* continuation */
   const continuation =
