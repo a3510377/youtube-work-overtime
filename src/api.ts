@@ -190,8 +190,8 @@ export const parseChat = async (
     currency: currency || void 0,
     amountValue,
     baseAmountValue:
-      +amountValue /
-        (exchange?.[AreaToCurrency?.[currency] || currency] || 1) || void 0,
+      +amountValue *
+      (1 / (exchange?.[AreaToCurrency?.[currency] || currency] || 1)),
     MembershipType,
     chat: parseChatData(data),
   };
