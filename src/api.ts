@@ -44,11 +44,11 @@ export class LiveChat extends EventEmitter {
 
     const updateExchangeRates = async () => {
       const {
-        data: { rates },
+        data: { conversion_rates },
       } = await axios.get(
-        `https://api.exchangerate.host/latest?base=${AREA}&access_key=${EXCHANGERATES_KEY}`
+        `https://v6.exchangerate-api.com/v6/${EXCHANGERATES_KEY}/latest/${AREA}`
       );
-      this.exchange = <typeof this.exchange>rates;
+      this.exchange = <typeof this.exchange>conversion_rates;
     };
     setInterval(updateExchangeRates.bind(this), day);
     updateExchangeRates();
